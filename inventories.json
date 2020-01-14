@@ -1,0 +1,10 @@
+{
+	"inv_armor": "armor",
+	"inv_contents": "inventory",
+	"ender_chest_contents": "ender_chest",
+	"talisman_bag": "talisman_bag",
+	"potion_bag": "potion_bag",
+	"fishing_bag": "fishing_bag",
+	"quiver": "quiver",
+	"candy_inventory_contents": "trick_or_treat_bag"
+}
