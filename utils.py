@@ -17,14 +17,36 @@ def json_dumps(data):
 def is_uuid(thing):
 	return len(thing) >= 32
 
-with open('names.json', 'r') as f:
-	fixed_names = json.loads(f.read())
+with open('bazaar_names.json', 'r') as f:
+	bazaar_names = json.loads(f.read())
 
-def fix_name(thing):
+with open('collection_names.json', 'r') as f:
+	collection_names = json.loads(f.read())
+
+def fix_name(thing, category='bazaar'):
+	fixed_names = {
+		'collection': collection_names,
+		'bazaar': bazaar_names,
+	}.get(category, 'bazaar')
 	thing = thing.lower()
 	if thing in fixed_names:
 		thing = fixed_names[thing]
+	else:
+		if thing in fixed_names:
+			thing = fixed_names[thing]
 	return thing
+
+def unfix_name(thing, category='bazaar'):
+	fixed_names = {
+		'collection': collection_names,
+		'bazaar': bazaar_names,
+	}.get(category, 'bazaar')
+	thing = thing.lower()
+	for unfixed_name in fixed_names:
+		fixed_name = fixed_names[unfixed_name]
+		if fixed_name.lower() == thing:
+			return unfixed_name.upper()
+	return thing.upper()
 
 color_codes = {
 	'0': '#000000',

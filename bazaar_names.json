@@ -1,0 +1,73 @@
+{
+	"log": "oak_log",
+	"log:1": "spruce_log",
+	"log:2": "birch_log",
+	"log:3": "jungle_log",
+	"log_2": "acacia_log",
+	"log_2:1": "dark_oak_log",
+
+	"ink_sack": "ink_sac",
+	"ink_sack:3": "cocoa_beans",
+	"ink_sack:4": "lapis_lazuli",
+
+	"cocoa": "cocoa_beans",
+
+	"raw_fish": "cod",
+	"raw_fish:1": "salmon",
+	"raw_fish:2": "tropical_fish",
+	"raw_fish:3": "pufferfish",
+
+	"raw_salmon": "salmon",
+	"cooked_fish": "cooked_cod",
+
+	"seeds": "wheat_seeds",
+	"sulphur": "gunpowder",
+	"raw_chicken": "chicken",
+	"pork": "porkchop",
+	"potato_item": "potato",
+	"carrot_item": "carrot",
+	"nether_stalk": "nether_wart",
+	"water_lily": "lily_pad",
+	"melon": "melon_slice",
+	"ender_stone": "end_stone",
+
+	"huge_mushroom_1": "red_mushroom_block",
+	"huge_mushroom_2": "brown_mushroom_block",
+
+	"enchanted_huge_mushroom_1": "enchanted_red_mushroom_block",
+	"enchanted_huge_mushroom_2": "enchanted_brown_mushroom_block",
+
+	"endstone": "end_stone",
+	"lapis_lazuli_block": "lapis_block",
+	"snow_ball": "snowball",
+	"raw_beef": "beef",
+	"eye_of_ender": "ender_eye",
+	"grilled_pork": "cooked_porkchop",
+	"glistering_melon": "glistering_melon_slice",
+	"cactus_green": "green_dye",
+
+	"enchanted_lapis_lazuli": "enchanted_lapis_lazuli",
+	"enchanted_potato": "enchanted_potato",
+	"enchanted_birch_log": "enchanted_birch_log",
+	"enchanted_gunpowder": "enchanted_gunpowder",
+	"enchanted_raw_salmon": "enchanted_salmon",
+	"enchanted_raw_chicken": "enchanted_chicken",
+	"enchanted_water_lily": "enchanted_lily_pad",
+	"enchanted_ink_sack": "enchanted_ink_sac",
+	"enchanted_melon": "enchanted_melon_slice",
+	"enchanted_glistering_melon": "enchanted_glistering_melon_slice",
+	"enchanted_iron": "enchanted_iron_ingot",
+	"enchanted_gold": "enchanted_gold_ingot",
+	"enchanted_cactus_green": "enchanted_green_dye",
+	"enchanted_endstone": "enchanted_end_stone",
+	"enchanted_lapis_lazuli_block": "enchanted_lapis_block",
+	"enchanted_raw_fish": "enchanted_cod",
+	"enchanted_eye_of_ender": "enchanted_ender_eye",
+	"enchanted_cocoa": "enchanted_cocoa_beans",
+	"enchanted_raw_beef": "enchanted_beef",
+	"enchanted_grilled_pork": "enchanted_cooked_porkchop",
+	"enchanted_nether_stalk": "enchanted_nether_wart",
+	"enchanted_cooked_fish": "enchanted_cooked_cod",
+	"enchanted_pork": "enchanted_porkchop"
+}
+

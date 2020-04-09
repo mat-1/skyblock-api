@@ -91,7 +91,7 @@ async def make_request(path, key, fast=False, only_cached=False, lazy=False, **k
 				return await make_request(path, keys_joined, **kwargs)
 			else:
 				apikeys.add_one(key)
-	if path == 'player' and data['player'] is None:
+	if 'player' in data and data['player'] == None:
 		raise errors.InvalidUser()
 	if path in cache_paths:
 		await add_to_cache(path, original_kwargs, data)
@@ -105,6 +105,8 @@ async def fetch_player_raw(user, key, lazy=False):
 	return r
 
 async def fetch_profile_raw(uuid, key):
+	if not uuid:
+		raise errors.InvalidUser
 	r = await make_request('skyblock/profile', profile=uuid, key=key)
 	return r
 
@@ -227,7 +229,7 @@ async def fetch_profile_member(user, profile, key):
 	player_data = await fetch_player(user_uuid, key)
 
 	data = await fetch_profile_raw(profile_uuid, key)
-	if data['profile'] is None:
+	if data.get('profile') is None:
 		members = {}
 	else:
 		members = data['profile']['members']
@@ -273,6 +275,7 @@ async def clear_caches():
 		for cached_time in dict(caches):
 			if current_time % cached_time == 0:
 				del caches[cached_time]
+				print('yeeted', current_time)
 
 async def get_unclaimed_auctions_total(profile_id_or_username, profile_name=None, *, key):
 	if profile_name is None:
@@ -295,7 +298,7 @@ async def queue_forever():
 				await queue.pop()
 			except Exception as e:
 				print('queue error', type(e), e)
-		# await asyncio.sleep(2)
+		await asyncio.sleep(0.5)
 
 asyncio.ensure_future(clear_caches())
 asyncio.ensure_future(queue_forever())

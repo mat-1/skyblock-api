@@ -36,6 +36,7 @@ def clean_profiles(data):
 
 def clean_player(data):
 	if not data: return
+	if 'player' not in data: return print(data)
 	player = data['player']
 	if player is None: return
 	output = {
@@ -179,7 +180,7 @@ async def clean_profile(data):
 			collection_tiers = member_data_raw['unlocked_coll_tiers']
 		if 'collection' in member_data_raw:
 			for raw_collection in member_data_raw['collection']:
-				collection_name = utils.fix_name(raw_collection)
+				collection_name = utils.fix_name(raw_collection, 'collection')
 				if collection_name not in collection_contributors:
 					collection_contributors[collection_name] = {}
 				collection_xp = member_data_raw['collection'][raw_collection]
@@ -216,7 +217,7 @@ def choose_category(raw_stat_name):
 
 def choose_collection_category(raw_collection_name):
 	for category_name in collection_categories:
-		if utils.fix_name(raw_collection_name) in collection_categories[category_name]:
+		if utils.fix_name(raw_collection_name, 'collection') in collection_categories[category_name]:
 			return category_name
 	return 'other'
 
@@ -412,7 +413,7 @@ async def clean_collection_tiers(data, contributors):
 		collection_name, collection_level = minion_name_raw.rsplit('_', 1)
 		collection_level = int(collection_level)
 		collection_category = choose_collection_category(collection_name)
-		collection_name = utils.fix_name(collection_name)
+		collection_name = utils.fix_name(collection_name, 'collection')
 
 
 		# If it's not upgraded it'll be -1, so fix it to be 0

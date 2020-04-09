@@ -2,9 +2,10 @@ from utils import json_dumps
 from aiohttp import web
 import skyblock
 import database
+import asyncio
 import mojang
 import errors
-import asyncio
+import bazaar
 import utils
 import time
 import json
@@ -189,6 +190,24 @@ async def fetch_uuid(request):
 				**player_data
 			})
 	return players
+
+@routes.get('/bazaar/items')
+async def bazaar_items(request):
+	return await bazaar.get_products()
+
+@routes.get('/bazaar/items/averages')
+async def bazaar_items_averages(request):
+	return await bazaar.get_average_prices()
+
+@routes.get('/bazaar/items/current')
+async def bazaar_items_data(request):
+	return await bazaar.get_current_prices()
+
+@routes.get('/bazaar/item/{item}')
+async def bazaar_item(request):
+	item = request.match_info['item']
+	return await bazaar.get_product(item)
+
 
 
 @web.middleware

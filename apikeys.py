@@ -25,6 +25,7 @@ async def find_working_key(keys):
 			continue
 		else:
 			return key
+	print('no key found')
 			
 async def get_key_uses(key):
 	if key in queries_in_past_min: return queries_in_past_min[key]
